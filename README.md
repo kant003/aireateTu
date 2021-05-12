@@ -7,3 +7,4 @@ Proyecto web (desarrollado en Spring Boot) para la consulta de calidad del aire,
 - Web desarrollada con el framework Spring Boot
 - Base de datos: PostgreSQL
 - Servidor: Heroku
+
