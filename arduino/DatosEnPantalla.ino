@@ -7,7 +7,8 @@ void setup() {
   lcd.begin(20,4);
 }
 
-void loop() {
+int MostrarValores() {
+
   int sen1=analogRead(A0);
   float sen2=analogRead(A1)*(5.0 / 1023.0);
   float sen3=analogRead(A2)*(100.0 / 1023.0);
