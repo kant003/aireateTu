@@ -1,6 +1,6 @@
 obtenerNivelCO2(){
-int MQ;
-
+return Serial.println(MQ);
+}
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
@@ -12,4 +12,3 @@ MQ = analogRead(A0);
 Serial.println(MQ);
 delay(500);
 } 
-}
