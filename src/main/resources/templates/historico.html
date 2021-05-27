@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div th:insert="fragments/head :: head"></div>
+  <div th:insert="fragments/navbar :: navbar"></div>
+  <body>
+    <div class="container">
+      <div class="cards">
+        <div class="card text-center my-2" th:each="dato: ${datos}">
+          <div class="card-body" th:id="${dato.ID}">
+            Temperatura:
+            <h5 class="card-title" th:text="${dato.temperature}"></h5>
+            CO2:
+            <h6
+              class="card-subtitle mb-2 text-muted"
+              th:text="${dato.co2}"
+            ></h6>
+            Humedad:
+            <h6 class="text-muted" th:text="${dato.humidity}"></h6>
+            Fecha:
+            <h6 class="text-muted" th:text="${dato.date}"></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
