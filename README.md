@@ -8,3 +8,5 @@ Proyecto web (desarrollado en Spring Boot) para la consulta de calidad del aire,
 - Base de datos: PostgreSQL
 - Servidor: Heroku
 
+Web consulta de datos almacenados: http://aireatetu.herokuapp.com/historico
+
