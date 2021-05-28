@@ -3,6 +3,7 @@
 #include <DHT.h>
 
 #define CO2PIN 34
+#define ALARMPIN 35
 #define DHTPIN 4
 #define DHTTYPE DHT11
 
@@ -23,6 +24,7 @@ void setup() {
     Serial.begin(9600);
     sensor.begin();
     connectToWifi(ssid, password);
+    pinMode(ALARMPIN, OUTPUT);
 }
 
 void connectToWifi(const char* ssid, const char* password) {
@@ -65,6 +67,12 @@ void loop() {
   int ppm = getCO2Level();
   float temp = getTemp();
   float humd = getHumidity();
+
+  if (ppm >= 1000) {
+    digitalWrite(ALARMPIN, HIGH);
+  } else {
+    digitalWrite(ALARMPIN, LOW);
+  }
 
   if (insertarDatos(temp, humd, ppm)) {
     Serial.println("Successful GET petition!");
