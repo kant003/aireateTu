@@ -1,3 +1,16 @@
-<nav class="navbar navbar-dark bg-dark" th:fragment="navbar">
-  <span class="navbar-brand mb-0 h1">Aireate Tú!</span>
-</nav>
+<header class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
+    <a class="px-5 navbar-brand" th:href="@{/}">Aireate Tú!</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="@{/ultimoDato}">Último Dato</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="@{/historico}">Últimos Datos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Gráfica</a>
+      </li>
+    </ul>
+  </nav>
+</header>

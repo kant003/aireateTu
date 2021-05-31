@@ -3,13 +3,30 @@
   <div th:insert="fragments/head :: head"></div>
   <div th:insert="fragments/navbar :: navbar"></div>
   <body>
-    <div class="container mt-3">
-      <ul class="list-group text-center">
-        <li class="list-group-item">
-          /api/insertarDatos?temp={TEMP}&humd={HUMD}&co2={CO2}
-        </li>
-        <li class="list-group-item">TODO: Ver datos</li>
-      </ul>
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="jumbotron-fluid bg-light text-center">
+            <h1 class="display-4">¡Bienvenido a Aireate Tú!</h1>
+            <p class="lead">
+              Es esta web están alojadas la API de uso de de Aireate Tú y varias
+              herramientas para consultar sus datos.
+            </p>
+            <p>
+              ¿Qué es AireateTú? ¡No es más que un sistema de deteccion de
+              niveles altos de PPM (CO2) que nos sirve en nuestra aula para
+              controlar no pasarnos del límite recomendado por las autoridades
+              sanitarias!
+            </p>
+            <a
+              class="btn btn-dark btn-lg mb-3"
+              href="@{/historico}"
+              role="button"
+              >¡Consultar datos!</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
