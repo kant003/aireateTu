@@ -10,6 +10,8 @@
 const char* ssid = "Cebem_21";
 const char* password = "Cebem2010";
 const String api = "https://aireatetu.herokuapp.com/api/";
+const String apiThing = "https://api.thingspeak.com/update?api_key=";
+const String key = "F0XGD8NQHGOKTJDJ";
 
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 DHT sensor(DHTPIN, DHTTYPE);
@@ -61,11 +63,17 @@ int insertData(float temp, float humd, int co2) {
     HTTPClient client;
     String path = api + "insertarDatos?temp=" + temp + "&humd=" + humd + "&co2=" + co2;
 
+    String pathThingSpeak = apiThing + key + "&Temperatura=" + temp + "&Humedad=" + humd + "&CO2=" + co2;
+
     client.begin(path.c_str());
     int httpResponseCode = client.GET();
     client.end();
 
-    return httpResponseCode > 0;
+    client.begin(pathThingSpeak.c_str());
+    int apiThingResponse = client.GET();
+    client.end();
+
+    return httpResponseCode > 0 && apiThingResponse > 0;
 }
 
 int getPPM() {
