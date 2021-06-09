@@ -10,3 +10,5 @@ Proyecto web (desarrollado en Spring Boot) para la consulta de calidad del aire,
 
 Web consulta de datos almacenados: http://aireatetu.herokuapp.com/historico
 
+Datos:
+https://thingspeak.com/channels/1404924
